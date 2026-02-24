@@ -5,47 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Squookye Youtube - Hub des TP</title>
     <style>
-        /* --- Reset CSS pour partir sur de bonnes bases --- */
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* --- Style principal du corps de la page (le fond animé) --- */
         body {
-            /* On assure que la page prend au moins toute la hauteur de l'écran */
             min-height: 100vh;
-            /* Police moderne */
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            /* Couleur de texte par défaut */
             color: white;
             
-            /* Centrage du contenu verticalement et horizontalement */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
 
-            /* --- LE FOND ANIMÉ --- */
-            /* Couleur de fond de secours (noir) */
             background-color: #0c0c0c;
-            /* Création d'un dégradé linéaire sombre avec plusieurs couleurs */
             background: linear-gradient(-45deg, #000000, #1a0b2e, #0f2027, #2c0000);
-            /* On agrandit le fond à 400% pour pouvoir le faire bouger */
             background-size: 400% 400%;
-            /* Lancement de l'animation nommée 'gradientBG' */
             animation: gradientBG 15s ease infinite;
         }
 
-        /* Définition de l'animation du fond */
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* --- Style du Titre --- */
         h1.main-title {
             font-size: 3rem; /* Grande taille */
             text-transform: uppercase; /* En majuscules */
@@ -56,10 +44,10 @@
         }
 
         /* Couleurs spécifiques pour les parties du titre */
-        .title-squookye {
+        .title-alexis {
             color: #4facfe; /* Bleu néon brillant */
         }
-        .title-youtube {
+        .title-richard {
             color: #ff0000; /* Rouge YouTube classique */
         }
 
@@ -107,14 +95,14 @@
 <body>
 
     <h1 class="main-title">
-        <span class="title-squookye">Squookye</span>
-        <span class="title-youtube">Youtube</span>
+        <span class="title-alexis">Alexis</span>
+        <span class="title-richard">Richard</span>
     </h1>
 
     <nav>
         <ul class="nav-list">
             <li><a class="nav-link" href="./TP1/index.html">TP 1</a></li>
-            <li><a class="nav-link" href="#" style="opacity: 0.5; cursor: default;">TP 2 (Accueil)</a></li>
+            <li><a class="nav-link" href="./TP2/index.html">TP 2</a></li>
             <li><a class="nav-link" href="./TP3/index.html">TP 3</a></li>
             <li><a class="nav-link" href="./TP4/index.html">TP 4</a></li>
             <li><a class="nav-link" href="./TP5/index.html">TP 5</a></li>

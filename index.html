@@ -2,9 +2,56 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Salut</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu des TP Web</title>
+    <style>
+        /* Styles de base pour la barre de navigation */
+        .tp-nav {
+            background-color: #333;
+            border-radius: 8px;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+
+        .tp-nav-list {
+            list-style-type: none; /* Enlève les puces de la liste */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Aligne les éléments horizontalement */
+            justify-content: space-around; /* Espace uniformément les liens */
+            flex-wrap: wrap; /* Permet le retour à la ligne sur petit écran */
+        }
+
+        .tp-nav-item {
+            margin: 5px;
+        }
+
+        .tp-nav-link {
+            text-decoration: none; /* Enlève le soulignement des liens */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Effet au survol de la souris */
+        .tp-nav-link:hover {
+            background-color: #555;
+            color: #4CAF50; /* Un petit changement de couleur au survol */
+        }
+    </style>
 </head>
 <body>
-    <h1>Salut</h1>
-</body>
+
+    <nav class="tp-nav" aria-label="Menu principal des TP">
+        <ul class="tp-nav-list">
+            <li class="tp-nav-item"><a class="tp-nav-link" href="./TP1-Web/">TP1</a></li>
+            <li class="tp-nav-item"><a class="tp-nav-link" href="./TP1-Web/">TP2</a></li>
+            <li class="tp-nav-item"><a class="tp-nav-link" href="./TP1-Web/">TP3</a></li>
+            <li class="tp-nav-item"><a class="tp-nav-link" href="./TP1-Web/">TP4</a></li>
+            <li class="tp-nav-item"><a class="tp-nav-link" href="./TP1-Web/">TP5</a></li>
+            <li class="tp-nav-item"><a class="tp-nav-link" href="./TP1-Web/">TP6</a></li>
+        </ul>
+    </nav>
+    </body>
 </html>

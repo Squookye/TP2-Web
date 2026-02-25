@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP4 - Accueil Cours Web</title>
+    <style>
+        :root {
+            --main-bg: #fdfdfd;
+            --container-bg: #ffffff;
+            --border-color: #ddd;
+            --accent-color: #2980b9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--main-bg);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-accueil {
+            width: 100%;
+            max-width: 800px;
+            border: 1px solid var(--border-color);
+            background: var(--container-bg);
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        /* Zone des images (Exercice 3 images) */
+        .image-gallery {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+
+        .image-gallery a img {
+            width: 74px;
+            height: 60px;
+            border: 1px solid #ccc;
+            transition: transform 0.2s;
+        }
+
+        .image-gallery a img:hover {
+            transform: scale(1.1);
+            border-color: var(--accent-color);
+        }
+
+        /* Descriptif du cours */
+        .descriptif {
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #f9f9f9;
+            font-style: italic;
+        }
+
+        /* Sommaire */
+        .sommaire {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+        }
+
+        .sommaire h2 {
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        ol {
+            line-height: 2;
+        }
+
+        .sommaire a {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .sommaire a:hover {
+            text-decoration: underline;
+        }
+
+        /* Bas de page (Téléchargement et Mail) */
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .btn-action {
+            margin: 10px;
+            padding: 8px 15px;
+            background: #eee;
+            text-decoration: none;
+            color: #333;
+            border-radius: 4px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-accueil">
+        <h1>Bloc 1 - Programmation Web</h1>
+
+        <div class="image-gallery">
+            <a href="./Docs/cours_HTML.html"><img src="./Image/html_logo.png" alt="Cours HTML"></a>
+            <a href="./Docs/cours_CSS.html"><img src="./Image/css_logo.png" alt="Cours CSS"></a>
+            <a href="./Docs/cours_JS.html"><img src="./Image/js_logo.png" alt="Cours JS"></a>
+        </div>
+
+        <div class="descriptif">
+            <h2>Descriptif du cours</h2>
+            <p>Ce module présente les fondamentaux du développement Web : la structuration avec HTML5, la mise en forme avec CSS3 et l'interactivité avec le langage JavaScript.</p>
+        </div>
+
+        <div class="sommaire">
+            <h2>Sommaire du cours Web</h2>
+            <ol>
+                <li><a href="./Docs/cours_HTML.html">COURS ET TP HTML</a></li>
+                <li><a href="./Docs/cours_CSS.html">COURS ET TP CSS</a></li>
+                <li><a href="./Docs/cours_JS.html">COURS ET TP JS</a></li>
+            </ol>
+        </div>
+
+        <footer>
+            <a href="../TP1.pdf" class="btn-action" download>📥 Télécharger le cours (PDF)</a>
+            
+            <a href="mailto:alexisrichard7526@gmail.com?subject=Question sur le cours Web" class="btn-action">📧 Contacter l'auteur</a>
+            
+            <p><br><a href="../index.html" style="color: #666; text-decoration: none;">← Retour Accueil Principal</a></p>
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cours JavaScript - Les Bases</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 900px; margin: auto; padding: 20px; }
+        h1 { color: #2980b9; border-bottom: 2px solid #2980b9; }
+        h2 { color: #2c3e50; background: #ecf0f1; padding: 5px; }
+        code { background: #f4f4f4; border: 1px solid #ddd; padding: 2px 5px; color: #e74c3c; }
+        pre { background: #2c3e50; color: #ecf0f1; padding: 15px; overflow-x: auto; }
+        .nav { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="../index.html">🏠 Accueil TP4</a> | 
+        <a href="#sommaire">Sommaire</a>
+    </div>
+
+    <h1>Langage JavaScript : Les Bases</h1>
+    
+    <section id="sommaire">
+        <h2>Sommaire</h2>
+        <ul>
+            <li><a href="#structure">1. Structure de base</a></li>
+            <li><a href="#variables">2. Les Variables (let, const, var)</a></li>
+            <li><a href="#types">3. Les Types de données</a></li>
+        </ul>
+    </section>
+
+    <section id="structure">
+        <h2>1. Structure de base</h2>
+        <p>Le JavaScript s'intègre dans le HTML via la balise <code>&lt;script&gt;</code>.</p>
+        <pre>
+&lt;script&gt;
+  // Les instructions JavaScript ici
+  let message = "Bonjour !";
+  alert(message);
+&lt;/script&gt;</pre>
+    </section>
+
+    <section id="variables">
+        <h2>2. Les Variables</h2>
+        <p>Il existe trois façons de déclarer des variables :</p>
+        <ul>
+            <li><strong>let</strong> : Portée locale (recommandé).</li>
+            <li><strong>var</strong> : Portée globale.</li>
+            <li><strong>const</strong> : Pour les valeurs qui ne changent pas.</li>
+        </ul>
+    </section>
+
+    <section id="types">
+        <h2>3. Les Types de données</h2>
+        <p>JavaScript utilise plusieurs types primitifs :</p>
+        <ul>
+            <li><strong>Number</strong> : Entiers et réels.</li>
+            <li><strong>String</strong> : Chaînes de caractères.</li>
+            <li><strong>Boolean</strong> : <code>true</code> ou <code>false</code>.</li>
+            <li><strong>BigInt</strong> : Pour les très grands entiers.</li>
+        </ul>
+    </section>
+
+    <p><a href="TPJS.html">➡️ Voir le TP sur les Tableaux</a></p>
+</body>
+</html>

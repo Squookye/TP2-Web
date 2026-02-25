@@ -1,0 +1,59 @@
+TP8 : LES TABLEAUX 
+INTRODUCTION
+Dans ce TP, il est demandé d'écrire des fonctions dites utilitaires permettant de travailler avec les tableaux. Ces fonctions seront ensuite utilisables dans d'autres TP
+Le tableau utilisé contient N éléments. Interdit dans cet exercice de pouvoir ajouter, d'insérer ou supprimer une case de ce dernier.  Ce tableau est déclaré de la façon suivante
+let N = parseInt(prompt("Combien de case pour le tableau ?"));
+let A=new Array(N);
+let nbElemRempli = 0;  // le tableau contient N cases vides
+
+Aperçu : le tableau est vide. N cases, et toutes vides.
+0	1	2	3	
+	…	N-2	N-1
+undefined	undefined	undefined	undefined	undefined	undefined	undefined	undefined
+
+
+
+
+Les fonctions seront codées dans un fichier .js séparé. Créer ce fichier et l'ajouter au projet. 
+Pour chaque fonction, respectez les 4 étapes : 
+1.	Boite noire : réfléchir aux entrées et aux sorties.
+2.	Dans le fichier .js coder la fonction
+3.	Ajouter le mode d'emploi de chacune des fonctions
+4.	Tester la fonction (avec l'inspecteur d'élément directement)
+
+EXERCICE 1
+Écrire une fonction initialiserTab1() permettant d'initialiser les N cases d'un tableau avec la valeur 0. À la fin de cette fonction, on considère que toutes les cases sont remplies
+
+EXERCICE 2
+Écrire une fonction initialiserTab2() permettant d'initialiser les N cases d'un tableau avec une valeur passée en paramètre. À la fin de cette fonction, on considère que toutes les cases sont remplies
+
+EXERCICE 3
+Écrire une fonction remplirTab1() permettant de remplir les N cases d'un tableau avec des valeurs aléatoires comprises dans l'intervalle MIN et MAX. Même si ce tableau est rempli, les anciennes valeurs sont remplacées.
+
+EXERCICE 4
+Écrire une fonction remplirTab2() permettant de remplir un certain nombre de cases du tableau sur les N possibles, avec des valeurs aléatoires comprises dans l'intervalle MIN, MAX. 
+Par exemple dans le tableau suivant seulement 3 cases sont remplies (nbElemRempli vaut ici 3). Avec la fonction remplirTab2 on commence à remplir à partir de case 3 (nbElemRempli)
+0	1	2	3	
+	…	N-2	N-1
+5	12	3	undefined	undefined	undefined	undefined	undefined
+
+
+
+
+Si le nombre de cases à remplir dépasse la capacité du tableau, on remplit jusqu'à la fin du tableau. Aucune case supplémentaire ne doit être ajoutée.
+
+
+EXERCICE 5
+Écrire une fonction afficherTab1() permettant d'afficher seulement les cases remplies d'un tableau. Dans l'exemple de l'exercice 4, seulement les 3 premières cases sont affichées
+
+EXERCICE 6
+Écrire une fonction afficherTab2() permettant d'afficher toutes les cases d'un tableau qu'elles soient remplies ou non
+
+EXERCICE 7
+Écrire une fonction afficherTab3() permettant d'afficher toutes les cases d'un tableau  à partir de la position DEB et ce jusqu'à la position FIN. 
+
+EXERCICE 8
+Écrire une fonction remplirElement() permettant de remplir une case avec une valeur sur  la première case vide du tableau. Si le tableau est complètement rempli, l'opération est impossible. Cette fonction retourne false si l'opération n'a pu être effectuée, le nombre d'éléments rempli dans le cas contraire. 
+
+EXERCICE 9
+Écrire une fonction saisirTab() permettant à l'utilisateur de lui-même saisir un certain nombre d'éléments d'un tableau sur les N possibles. Les éléments sont ajoutés les uns après les autres à partir de la première case vide dans le tableau. Cette fonction retourne le nombre de cases rempli du tableau.

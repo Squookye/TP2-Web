@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP3 - Alexis Richard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 { color: #2c3e50; border-bottom: 2px solid #4facfe; }
+        h2 { color: #e74c3c; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .cv-header { text-align: center; background: #2c3e50; color: white; padding: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>TP3 - Utilisation des balises HTML</h1>
+
+    <section>
+        <h2>Exercice 1 : Mémento HTML5</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Balise</th>
+                    <th>Rôle</th>
+                    <th>Exemple</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code></td>
+                    <td>Titres de différents niveaux</td>
+                    <td><h1>Titre principal</h1></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;p&gt;</code></td>
+                    <td>Paragraphe de texte</td>
+                    <td><p>Ceci est un paragraphe.</p></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;strong&gt;</code></td>
+                    <td>Texte important (gras)</td>
+                    <td><strong>Texte important</strong></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;em&gt;</code></td>
+                    <td>Texte mis en emphase (italique)</td>
+                    <td><em>Texte en italique</em></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Exercice 2 : Structuration du texte SQL</h2>
+        
+        <h1>1. Le langage SQL</h1>
+        <h2>1.1. Définition</h2>
+        <p>Le langage <strong>SQL</strong> (Structured Query Language) est un langage comprenant l'ensemble des ordres nécessaires à la création et à la gestion d'une base de données relationnelle.</p>
+        
+        <h2>1.2. Les différentes normes utilisées</h2>
+        <p>Il existe aujourd'hui plusieurs normes relatives à l'utilisation du langage SQL :</p>
+        <ul>
+            <li>La norme SQL 89</li>
+            <li>La norme SQL 92</li>
+            <li>Aujourd'hui SQL 2011</li>
+        </ul>
+        <p><em>Note : Bien qu'il existe des normes, il peut y avoir des différences entre SGBDR (PostgreSQL, MySQL, etc.).</em></p>
+    </section>
+
+    <section>
+        <h2>Exercice 3 : Mon CV</h2>
+        <div class="cv-header">
+            <h1>ALEXIS RICHARD</h1>
+            <p>Étudiant en BTS SIO - Option SLAM / SISR</p>
+        </div>
+        
+        <h3>Formations</h3>
+        <ul>
+            <li><strong>2025 - Présent :</strong> BTS SIO - Lycée Algoud-Laffemas</li>
+            <li><strong>2024 :</strong> Baccalauréat Général</li>
+        </ul>
+
+        <h3>Compétences</h3>
+        <p>HTML5, CSS3, Git/GitHub, Réseaux TCP/IP.</p>
+    </section>
+
+    <p><a href="../index.html">Retour à l'accueil</a></p>
+
+</body>
+</html>

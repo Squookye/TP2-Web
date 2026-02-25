@@ -3,105 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP3 - Alexis Richard</title>
+    <title>TP3 - Alexis Richard - CV Digital</title>
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #4facfe;
+            --secondary-accent: #ff0000;
+            --text-color: #333;
+            --bg-color: #f4f7f6;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
-            margin: auto;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
         }
-        section {
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
             background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        h1 { color: #2c3e50; border-bottom: 2px solid #4facfe; }
-        h2 { color: #e74c3c; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        .cv-header { text-align: center; background: #2c3e50; color: white; padding: 10px; }
+
+        /* En-tête du CV */
+        header {
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 { margin: 0; color: var(--primary-color); font-size: 2.5rem; text-transform: uppercase; }
+        .subtitle { color: var(--accent-color); font-weight: bold; font-size: 1.2rem; margin-top: 5px; }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Sections */
+        section { margin-bottom: 30px; }
+        h2 { 
+            background: var(--primary-color); 
+            color: white; 
+            padding: 8px 15px; 
+            border-radius: 5px;
+            font-size: 1.3rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Expériences et Formation */
+        .item { margin-bottom: 15px; }
+        .item-title { font-weight: bold; color: var(--primary-color); }
+        .item-date { color: #666; font-style: italic; font-size: 0.9rem; }
+
+        /* Listes */
+        ul { padding-left: 20px; }
+        li { margin-bottom: 5px; }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+            .container { padding: 20px; }
+        }
     </style>
 </head>
 <body>
 
-    <h1>TP3 - Utilisation des balises HTML</h1>
+    <div class="container">
+        <header>
+            <h1>Alexis Richard</h1>
+            <div class="subtitle">Étudiant en BTS SIO (SLAM)</div>
+            <div class="contact-info">
+                <span>📍 Livron-sur-Drôme, France</span>
+                <span>📧 alexisrichard7526@gmail.com</span>
+                <span>📞 06 33 85 90 53</span>
+            </div>
+        </header>
 
-    <section>
-        <h2>Exercice 1 : Mémento HTML5</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Balise</th>
-                    <th>Rôle</th>
-                    <th>Exemple</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code></td>
-                    <td>Titres de différents niveaux</td>
-                    <td><h1>Titre principal</h1></td>
-                </tr>
-                <tr>
-                    <td><code>&lt;p&gt;</code></td>
-                    <td>Paragraphe de texte</td>
-                    <td><p>Ceci est un paragraphe.</p></td>
-                </tr>
-                <tr>
-                    <td><code>&lt;strong&gt;</code></td>
-                    <td>Texte important (gras)</td>
-                    <td><strong>Texte important</strong></td>
-                </tr>
-                <tr>
-                    <td><code>&lt;em&gt;</code></td>
-                    <td>Texte mis en emphase (italique)</td>
-                    <td><em>Texte en italique</em></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+        <section>
+            <h2>Profil Professionnel</h2>
+            <p>Étudiant en première année de Brevet Technicien Supérieur (BTS) en Service Informatique aux Organisations (SIO) option Solutions Logicielles et Applications Métiers (SLAM). Autonome, créatif et respectueux.</p>
+        </section>
 
-    <section>
-        <h2>Exercice 2 : Structuration du texte SQL</h2>
-        
-        <h1>1. Le langage SQL</h1>
-        <h2>1.1. Définition</h2>
-        <p>Le langage <strong>SQL</strong> (Structured Query Language) est un langage comprenant l'ensemble des ordres nécessaires à la création et à la gestion d'une base de données relationnelle.</p>
-        
-        <h2>1.2. Les différentes normes utilisées</h2>
-        <p>Il existe aujourd'hui plusieurs normes relatives à l'utilisation du langage SQL :</p>
-        <ul>
-            <li>La norme SQL 89</li>
-            <li>La norme SQL 92</li>
-            <li>Aujourd'hui SQL 2011</li>
-        </ul>
-        <p><em>Note : Bien qu'il existe des normes, il peut y avoir des différences entre SGBDR (PostgreSQL, MySQL, etc.).</em></p>
-    </section>
+        <div class="grid">
+            <section>
+                <h2>Compétences</h2>
+                <ul>
+                    <li><strong>Programmation :</strong> Java, HTML, JS, CSS</li>
+                    <li><strong>Bases de données :</strong> SQL</li>
+                    <li><strong>Outils :</strong> Excel, Word, PowerPoint</li>
+                    <li><strong>Langues :</strong> Anglais & Espagnol (Intermédiaire)</li>
+                </ul>
+            </section>
 
-    <section>
-        <h2>Exercice 3 : Mon CV</h2>
-        <div class="cv-header">
-            <h1>ALEXIS RICHARD</h1>
-            <p>Étudiant en BTS SIO - Option SLAM / SISR</p>
+            <section>
+                <h2>Centres d'intérêt</h2>
+                <ul>
+                    <li>Football</li>
+                    <li>Mathématiques</li>
+                    <li>Constructions LEGO</li>
+                </ul>
+            </section>
         </div>
-        
-        <h3>Formations</h3>
-        <ul>
-            <li><strong>2025 - Présent :</strong> BTS SIO - Lycée Algoud-Laffemas</li>
-            <li><strong>2024 :</strong> Baccalauréat Général</li>
-        </ul>
 
-        <h3>Compétences</h3>
-        <p>HTML5, CSS3, Git/GitHub, Réseaux TCP/IP.</p>
-    </section>
+        <section>
+            <h2>Expériences Professionnelles</h2>
+            <div class="item">
+                <div class="item-title">Stage - Vendeur de Jeux Vidéo (LaTouche Geek)</div>
+                <div class="item-date">Juin 2021 | Livron, France</div>
+                <ul>
+                    <li>Conseils en vente de jeux vidéo, consoles et jeux de société.</li>
+                    <li>Test de consoles et nettoyage de matériel.</li>
+                    <li>Rangement des rayons.</li>
+                </ul>
+            </div>
+        </section>
 
-    <p><a href="../index.html">Retour à l'accueil</a></p>
+        <section>
+            <h2>Formation & Diplômes</h2>
+            <div class="item">
+                <div class="item-title">BTS SIO option SLAM</div>
+                <div class="item-date">2025 - En cours | Lycée Algoud-Laffemas, Valence</div>
+            </div>
+            <div class="item">
+                <div class="item-title">BAC STMG option SIG (Système d'Information et de Gestion)</div>
+                <div class="item-date">Obtenu en Juin 2025 | Lycée Algoud-Laffemas</div>
+            </div>
+        </section>
+
+        <section style="border-top: 1px solid #ddd; padding-top: 20px; margin-top: 40px;">
+            <h2 style="background: #e74c3c;">Annexe : Exercice SQL (TP3)</h2>
+            <h3>1. Le langage SQL</h3>
+            <p>Le langage <strong>SQL</strong> (Structured Query Language) est un langage comprenant l'ensemble des ordres nécessaires à la gestion d'une base de données relationnelle.</p>
+            <ul>
+                <li>Norme SQL 89</li>
+                <li>Norme SQL 92</li>
+                <li>Norme SQL 2011</li>
+            </ul>
+        </section>
+
+        <a href="../index.html" class="back-link">← Retour au menu principal</a>
+    </div>
 
 </body>
 </html>

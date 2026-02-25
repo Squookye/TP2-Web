@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours HTML - Bloc 1</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: auto; padding: 20px; color: #333; }
+        header { display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #e67e22; padding-bottom: 10px; margin-bottom: 20px; }
+        .logo { width: 74px; height: 50px; border: 1px solid #ddd; } /* Taille demandée par le TP4-Lien */
+        h1 { color: #e67e22; margin: 0; }
+        h2 { color: #2c3e50; border-left: 5px solid #e67e22; padding-left: 10px; margin-top: 30px; }
+        .nav-links { margin-bottom: 20px; }
+        .nav-links a { text-decoration: none; color: #2980b9; font-weight: bold; }
+        .nav-links a:hover { text-decoration: underline; }
+        ul { list-style-type: square; }
+        .footer-nav { margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Cours 1 : Introduction au HTML</h1>
+        <img src="../Image/html_logo.png" alt="Logo HTML" class="logo">
+    </header>
+
+    <div class="nav-links">
+        <a href="../index.html">🏠 Retour Accueil TP4</a>
+    </div>
+
+    <section id="sommaire">
+        <h2>Sommaire</h2>
+        <ul>
+            <li><a href="#intro">1. Introduction et définition</a></li>
+            <li><a href="#structure">2. Structure d'un document</a></li>
+            <li><a href="#balises">3. Les balises fondamentales</a></li>
+        </ul>
+    </section>
+
+    <section id="intro">
+        <h2>1. Introduction</h2>
+        <p>Le HTML (HyperText Markup Language) est le langage de balisage utilisé pour la création de pages web. Il permet de structurer sémantiquement le contenu d'une page.</p>
+    </section>
+
+    <section id="liste-cours">
+        <h2>Liste des cours</h2>
+        <ol>
+            [cite_start]<li>Introduction au Web et au protocole HTTP [cite: 1]</li>
+            [cite_start]<li>Structure de base et balises de texte [cite: 316]</li>
+            <li>Les liens hypertextes</li>
+            <li>Les listes et les tableaux</li>
+        </ol>
+    </section>
+
+    <section id="tps">
+        <h2>Travaux Pratiques (TP)</h2>
+        <ul>
+            [cite_start]<li><strong>TP1 :</strong> Étude du protocole HTTP [cite: 3]</li>
+            [cite_start]<li><strong>TP3 :</strong> Utilisation des balises conteneurs [cite: 312]</li>
+            <li><strong>TP4 :</strong> Mise en place des liens hypertextes</li>
+        </ul>
+    </section>
+
+    <div class="footer-nav">
+        <p>
+            <a href="#sommaire">⬆️ Revenir au sommaire</a> | 
+            <a href="../index.html">🏠 Retour Accueil TP4</a>
+        </p>
+        <a href="../../TP1.pdf" style="display:inline-block; background:#e67e22; color:white; padding:10px; text-decoration:none; border-radius:5px;" download>📥 Télécharger le cours complet (PDF)</a>
+    </div>
+
+</body>
+</html>

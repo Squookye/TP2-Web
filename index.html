@@ -35,59 +35,53 @@
         }
 
         h1.main-title {
-            font-size: 3rem; /* Grande taille */
-            text-transform: uppercase; /* En majuscules */
-            letter-spacing: 3px; /* Espacement des lettres */
-            margin-bottom: 2.5rem; /* Espace sous le titre */
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2.5rem;
             text-align: center;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Légère ombre pour le contraste */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        /* Couleurs spécifiques pour les parties du titre */
         .title-alexis {
-            color: #4facfe; /* Bleu néon brillant */
+            color: #4facfe;
         }
         .title-richard {
-            color: #ff0000; /* Rouge YouTube classique */
+            color: #ff0000;
         }
 
-        /* --- Style de la liste de navigation --- */
         .nav-list {
-            list-style-type: none; /* Pas de puces */
+            list-style-type: none;
             display: flex;
-            flex-direction: column; /* Empile les liens en une seule colonne */
-            gap: 20px; /* Espace entre chaque lien */
+            flex-direction: column;
+            gap: 20px;
             align-items: center;
-            width: 100%; /* Prend toute la largeur disponible */
+            width: 100%;
         }
 
-        /* --- Style des boutons/liens --- */
         .nav-link {
             display: block;
-            text-decoration: none; /* Pas de soulignement */
+            text-decoration: none;
             color: white;
             font-size: 1.2rem;
             font-weight: bold;
             padding: 15px 40px;
-            width: 250px; /* Largeur fixe pour des boutons uniformes */
+            width: 250px;
             text-align: center;
-            
-            /* Style "Glassmorphism" (effet verre dépoli moderne) */
-            background: rgba(255, 255, 255, 0.05); /* Fond très transparent */
-            border: 1px solid rgba(255, 255, 255, 0.1); /* Bordure subtile */
-            border-radius: 30px; /* Bords très arrondis */
-            backdrop-filter: blur(5px); /* Effet de flou derrière le bouton */
-            
-            /* Transition douce pour l'effet de survol */
+
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+
             transition: all 0.3s ease;
         }
 
-        /* --- Effet au survol de la souris --- */
         .nav-link:hover {
-            background: rgba(255, 255, 255, 0.15); /* Le fond s'éclaircit */
-            border-color: rgba(255, 255, 255, 0.5); /* La bordure devient plus visible */
-            transform: translateY(-5px) scale(1.05); /* Le bouton monte légèrement et grossit */
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4); /* Ombre portée */
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         }
 
     </style>

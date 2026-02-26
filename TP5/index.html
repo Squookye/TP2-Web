@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>TP5 - Les Tableaux</title>
+<style>
+  body {
+    font-family: sans-serif;
+    margin: 20px;
+  }
+  h1 {
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  .ex2-table img {
+    width: 50px;
+    height: auto;
+  }
+  .ex3-table {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .ex3-table th {
+    background-color: #d9edf7;
+  }
+  .ex3-table caption {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  code {
+    background-color: #eee;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<h1>EXERCICE 1</h1>
+<table>
+  <thead>
+    <tr>
+      <th rowspan="3">Vacances</th>
+      <th>Zone A</th>
+      <th>Zone B</th>
+      <th>Zorin C</th>
+    </tr>
+    <tr>
+      <th>Académies</th>
+      <th>Académies</th>
+      <th>Académies</th>
+    </tr>
+    <tr>
+      <td>Besançon, Bordeaux, Clermont-Ferrand, Dijon, Grenoble, Limoges, Lyon, Poitiers</td>
+      <td>Aix-Marseille, Amiens, Caen, Lille, Nancy-Metz, Nantes, Nice, Orléans-Tours, Reims, Rennes, Rouen, Strasbourg</td>
+      <td>Créteil, Montpellier, Paris, Toulouse, Versailles</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Prérentrée des enseignants</td>
+      <td colspan="3">Reprise des cours vendredi 1er septembre 2017</td>
+    </tr>
+    <tr>
+      <td>Rentrée scolaire des élèves</td>
+      <td colspan="3">Reprise des cours lundi 4 septembre 2017</td>
+    </tr>
+    <tr>
+      <td>Vacances de la Toussaint</td>
+      <td colspan="3">Fin des cours samedi 21 octobre 2017<br>Reprise des cours lundi 6 novembre 2017</td>
+    </tr>
+    <tr>
+      <td>Vacances de Noel</td>
+      <td colspan="3">Fin des cours samedi 23 décembre 2017<br>Reprise des cours lundi 8 janvier 2018</td>
+    </tr>
+    <tr>
+      <td>Vacances d'hiver</td>
+      <td>Fin des cours samedi 10 février 2018<br>Reprise des cours lundi 26 février 2018</td>
+      <td>Fin des cours samedi 24 février 2018<br>Reprise des cours lundi 12 mars 2018</td>
+      <td>Fin des cours samedi 17 février 2018<br>Reprise des cours lundi 5 mars 2018</td>
+    </tr>
+    <tr>
+      <td>Vacances de printemps</td>
+      <td>Fin des cours samedi 7 avril 2018<br>Reprise des cours lundi 23 avril 2018</td>
+      <td>Fin des cours samedi 21 avril 2018<br>Reprise des cours lundi 7 mai 2018</td>
+      <td>Fin des cours samedi 14 avril 2018<br>Reprise des cours lundi 30 avril 2018</td>
+    </tr>
+    <tr>
+      <td>Vacances d'ete</td>
+      <td colspan="3">Fin des cours samedi 7 juillet 2018</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>EXERCICE 2</h1>
+<table class="ex2-table">
+  <caption>Langages de script côté serveur</caption>
+  <thead>
+    <tr>
+      <th>Logo</th>
+      <th>Nom abrégé</th>
+      <th>Nom complet</th>
+      <th>Année de sortie</th>
+      <th>Site web de référence</th>
+      <th>Exemple de code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="php_logo_original.png" target="_blank"><img src="php_logo_min.png" alt="Logo PHP" title="Cliquez pour agrandir le logo PHP"></a></td>
+      <td>PHP</td>
+      <td>PHP: Hypertext Preprocessor</td>
+      <td>1995</td>
+      <td title="Aller sur le site de PHP"><a href="https://www.php.net" target="_blank">php.net</a></td>
+      <td><code>&lt;?php echo "Hello"; ?&gt;</code></td>
+    </tr>
+    <tr>
+      <td><a href="jsp_logo_original.png" target="_blank"><img src="jsp_logo_min.png" alt="Logo JSP" title="Cliquez pour agrandir le logo JSP"></a></td>
+      <td>JSP</td>
+      <td>Jakarta Server Pages</td>
+      <td>1999</td>
+      <td title="Aller sur le site de JSP"><a href="https://jakarta.ee" target="_blank">jakarta.ee</a></td>
+      <td><code>&lt;% out.print("Hello"); %&gt;</code></td>
+    </tr>
+    <tr>
+      <td><a href="asp_logo_original.png" target="_blank"><img src="asp_logo_min.png" alt="Logo ASP" title="Cliquez pour agrandir le logo ASP"></a></td>
+      <td>ASP</td>
+      <td>Active Server Pages</td>
+      <td>1996</td>
+      <td title="Aller sur le site de ASP"><a href="https://dotnet.microsoft.com" target="_blank">microsoft.com</a></td>
+      <td><code>Response.Write("Hello")</code></td>
+    </tr>
+    <tr>
+      <td><a href="ruby_logo_original.png" target="_blank"><img src="ruby_logo_min.png" alt="Logo Ruby" title="Cliquez pour agrandir le logo Ruby"></a></td>
+      <td>Ruby</td>
+      <td>Ruby</td>
+      <td>1995</td>
+      <td title="Aller sur le site de Ruby"><a href="https://www.ruby-lang.org" target="_blank">ruby-lang.org</a></td>
+      <td><code>puts "Hello"</code></td>
+    </tr>
+    <tr>
+      <td><a href="perl_logo_original.png" target="_blank"><img src="perl_logo_min.png" alt="Logo Perl" title="Cliquez pour agrandir le logo Perl"></a></td>
+      <td>Perl</td>
+      <td>Practical Extraction and Report Language</td>
+      <td>1987</td>
+      <td title="Aller sur le site de Perl"><a href="https://www.perl.org" target="_blank">perl.org</a></td>
+      <td><code>print "Hello";</code></td>
+    </tr>
+    <tr>
+      <td><a href="python_logo_original.png" target="_blank"><img src="python_logo_min.png" alt="Logo Python" title="Cliquez pour agrandir le logo Python"></a></td>
+      <td>Python</td>
+      <td>Python</td>
+      <td>1991</td>
+      <td title="Aller sur le site de Python"><a href="https://www.python.org" target="_blank">python.org</a></td>
+      <td><code>print("Hello")</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>EXERCICE 3 : CALENDRIER</h1>
+<table class="ex3-table">
+  <caption>Avril 2024</caption>
+  <thead>
+    <tr>
+      <th>Lu</th>
+      <th>Ma</th>
+      <th>Me</th>
+      <th>Je</th>
+      <th>Ve</th>
+      <th>Sa</th>
+      <th>Di</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+      <td>20</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+      <td>25</td>
+      <td>26</td>
+      <td>27</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>30</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

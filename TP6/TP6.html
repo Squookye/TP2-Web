@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP6 - Jeu de Memory - Alexis Richard</title>
+    <style>
+        /* CONFIGURATION GÉNÉRALE DU TP6 */
+        html, body {
+            width: 100%;
+            height: 100%;
+            min-width: 600px;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* TON STYLE GRAPHIQUE PERSONNEL */
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(-45deg, #000000, #1a0b2e, #0f2027, #2c0000);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #4facfe;
+        }
+
+        /* GRILLE DE JEU : 5 images par ligne */
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 colonnes */
+            gap: 15px;
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ÉTAPE 4 : MÉCANISME POUR CACHER LES IMAGES */
+        .card {
+            background-color: #2c3e50; /* Couleur de fond pour cacher l'image */
+            border: 1px solid white;    /* Bordure demandée */
+            border-radius: 8px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            overflow: hidden;
+            transition: background-color 0.3s;
+        }
+
+        /* Changement de couleur au survol */
+        .card:hover {
+            background-color: #34495e;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0; /* Image invisible par défaut */
+            transition: opacity 0.2s;
+        }
+
+        /* RÉVÉLATION AU CLIC (SANS JS) */
+        .card:active img {
+            opacity: 1; /* L'image apparaît lors du clic */
+        }
+
+        .back-link {
+            margin-top: 30px;
+            color: #4facfe;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            background: rgba(79, 172, 254, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Jeu du Mémory</h1>
+
+    <div class="memory-grid">
+        <div class="card"><img src="assets/Image/img1.png" alt="Card 1"></div>
+        <div class="card"><img src="assets/Image/img2.png" alt="Card 2"></div>
+        <div class="card"><img src="assets/Image/img3.png" alt="Card 3"></div>
+        <div class="card"><img src="assets/Image/img4.png" alt="Card 4"></div>
+        <div class="card"><img src="assets/Image/img5.png" alt="Card 5"></div>
+
+        <div class="card"><img src="assets/Image/img6.png" alt="Card 6"></div>
+        <div class="card"><img src="assets/Image/img7.png" alt="Card 7"></div>
+        <div class="card"><img src="assets/Image/img8.png" alt="Card 8"></div>
+        <div class="card"><img src="assets/Image/img9.png" alt="Card 9"></div>
+        <div class="card"><img src="assets/Image/img10.png" alt="Card 10"></div>
+
+        <div class="card"><img src="assets/Image/img1.png" alt="Card 1"></div>
+        <div class="card"><img src="assets/Image/img2.png" alt="Card 2"></div>
+        <div class="card"><img src="assets/Image/img3.png" alt="Card 3"></div>
+        <div class="card"><img src="assets/Image/img4.png" alt="Card 4"></div>
+        <div class="card"><img src="assets/Image/img5.png" alt="Card 5"></div>
+
+        <div class="card"><img src="assets/Image/img6.png" alt="Card 6"></div>
+        <div class="card"><img src="assets/Image/img7.png" alt="Card 7"></div>
+        <div class="card"><img src="assets/Image/img8.png" alt="Card 8"></div>
+        <div class="card"><img src="assets/Image/img9.png" alt="Card 9"></div>
+        <div class="card"><img src="assets/Image/img10.png" alt="Card 10"></div>
+    </div>
+
+    <a href="../index.html" class="back-link">← Retour au menu</a>
+
+</body>
+</html>

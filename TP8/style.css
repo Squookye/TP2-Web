@@ -1,0 +1,16 @@
+header nav {
+    display: flex;
+    justify-content: space-between; /* Espacement uniforme */
+    align-items: center;
+    padding: 1rem;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: blue; /* Changement au survol */
+}

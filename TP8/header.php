@@ -1,7 +1,7 @@
 <header>
     <nav>
         <ul>
-            <p> <a href="index.php">Accueil</a> | <a href="tp1.php">TP 1</a> | <a href="tp2.php">TP 2</a> </p>
+            <p> <a href="index.php">Accueil</a> | <a href="tp8.php">TP 8</a> | <a href="tp9.php">TP 9</a> </p>
         </ul>
     </nav>
 </header>

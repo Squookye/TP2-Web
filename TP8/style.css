@@ -1,16 +1,105 @@
-header nav {
+/*
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #000000, #1a0b2e, #0f2027, #2c0000);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: white;
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between; /* Espacement uniforme */
+    flex-direction: column;
     align-items: center;
-    padding: 1rem;
 }
 
-header nav a {
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+*/
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px 0;
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "nav nav"
+        "section aside"
+        "footer footer";
+    grid-template-columns: 3fr 1fr;
+    gap: 15px;
+}
+
+header {
+    grid-area: header;
+    background: rgba(79, 172, 254, 0.2);
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #4facfe;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+nav {
+    grid-area: nav;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
     text-decoration: none;
-    color: #333;
-    transition: color 0.3s;
+    margin: 0 15px;
+    font-weight: bold;
 }
 
-header nav a:hover {
-    color: blue; /* Changement au survol */
+section {
+    grid-area: section;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 300px;
+}
+
+aside {
+    grid-area: aside;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+footer {
+    grid-area: footer;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    border-radius: 10px;
+}
+
+h1, h2 {
+    color: #4facfe;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas: 
+            "header"
+            "nav"
+            "section"
+            "aside"
+            "footer";
+        grid-template-columns: 1fr;
+    }
 }

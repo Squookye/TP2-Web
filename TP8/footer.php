@@ -3,6 +3,7 @@
     <nav>
         <ul class="nav-list">
             <li><a class="nav-link" href="https://squookye.github.io/TP2-Web/TP1/TP1-Web.pdf">TP 1</a></li>
+            <li><a class="nav-link" href="https://squookye.github.io/TP2-Web/index.html">TP 2</a></li>
             <li><a class="nav-link" href="https://squookye.github.io/TP2-Web/TP3/index.html">TP 3</a></li>
             <li><a class="nav-link" href="https://squookye.github.io/TP2-Web/TP4/index.html">TP 4</a></li>
             <li><a class="nav-link" href="https://squookye.github.io/TP2-Web/TP5/index.html">TP 5</a></li>

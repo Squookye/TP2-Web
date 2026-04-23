@@ -1,5 +1,5 @@
-<footer>
-    <p>&copy; 2026 - Mon Portfolio BTS SIO</p>
+<footer></footer>
+    <link rel="stylesheet" href="style.css">
     <nav>
         <ul class="nav-list">
             <li><a class="nav-link" href="https://squookye.github.io/TP2-Web/TP1/TP1-Web.pdf">TP 1</a></li>
@@ -14,4 +14,5 @@
             <li><a class="nav-link" href="http://b1.richard.net.local/tp9_b.php">TP 9 B</a></li>
         </ul>
     </nav>
+    <p>&copy; 2026 - Mon Portfolio BTS SIO</p>
 </footer>

@@ -7,6 +7,28 @@ $texte_reponses = '';
 // Traitement des données POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $texte_reponses = afficher_donnees($_POST);
+    // --- CODE D'ENVOI D'EMAIL ---
+    if (isset($_POST['date_debut'])) {
+        $destinataire = "squookyetest@gmail.com";
+        $sujet = "Formulaire de Demande de Surveillance";
+        
+        $message = "Nouvelle demande reçue :\n\n";
+        foreach ($_POST as $cle => $valeur) {
+            $message .= $cle . " : " . $valeur . "\n";
+        }
+        
+        $envoi_reussi = mail($destinataire, $sujet, $message);
+
+        if ($envoi_reussi) {
+            $texte_reponses .= '<div style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 15px; margin-top: 20px; border-radius: 4px;">';
+            $texte_reponses .= '<strong>✅ Succès !</strong> Votre demande de surveillance a bien été envoyée à nos services.';
+            $texte_reponses .= '</div>';
+        } else {
+            $texte_reponses .= '<div style="background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 15px; margin-top: 20px; border-radius: 4px;">';
+            $texte_reponses .= '<strong>❌ Erreur :</strong> Un problème est survenu lors de l\'envoi de votre demande. Veuillez réessayer plus tard.';
+            $texte_reponses .= '</div>';
+        }
+    }
 }
 
 function afficher_donnees($donnees) {

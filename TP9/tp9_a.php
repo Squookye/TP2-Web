@@ -1,16 +1,15 @@
 <?php
-// Initialisation
 session_start();
 $formulaire_actif = isset($_GET['formulaire']) ? $_GET['formulaire'] : 'inscription';
 $texte_reponses = '';
 
-// Traitement des données POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $texte_reponses = afficher_donnees($_POST);
-    // --- CODE D'ENVOI D'EMAIL ---
+
     if (isset($_POST['date_debut'])) {
-        $destinataire = "squookyetest@gmail.com";
-        $sujet = "Formulaire de Demande de Surveillance";
+        $destinataire = "squookyetest@gmail.com\n";
+        $envoyeur = "testsquookye@gmail.com\n";
+        $sujet = "Formulaire de Demande de Surveillance\n";
         
         $message = "Nouvelle demande reçue :\n\n";
         foreach ($_POST as $cle => $valeur) {
@@ -256,7 +255,7 @@ function formulaire_demande() {
         </div>
 
         <?php
-        // Affichage du formulaire approprié
+
         switch ($formulaire_actif) {
             case 'inscription':
                 echo formulaire_inscription();
@@ -273,7 +272,7 @@ function formulaire_demande() {
         ?>
 
         <?php
-        // Affichage des données si le formulaire a été soumis
+
         if (!empty($texte_reponses)) {
             echo $texte_reponses;
         }

@@ -1,15 +1,24 @@
 <?php
 session_start();
 
-$host = 'localhost';
-$dbname = 'tranquillite_vacances';
-$user = 'root';
-$pass = '';
+$host = 'ispconfig.net.local:8081/phpmyadmin';
+$dbname = 'c66tp9b';    
+$user = 'richard';       
+$pass = 'Squookye3';     
 
 try {
-    $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
+    $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES => false,
+    ]);
 } catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
+    echo '<div style="color: red; border: 1px solid red; padding: 10px;">';
+    echo '<h3>Erreur de connexion</h3>';
+    echo 'Message : ' . $e->getMessage() . '<br>';
+    echo 'Vérifiez l\'utilisateur <b>' . $user . '</b> et la base <b>' . $dbname . '</b>';
+    echo '</div>';
+    exit;
 }
  
 if (isset($_POST['login_btn'])) {
@@ -75,7 +84,13 @@ if (isset($_GET['logout'])) {
                                      FROM DEMANDE d 
                                      JOIN UTILISATEUR u ON d.id_utilisateur = u.id_utilisateur");
                 
-                while ($row = $query->fetch()) {
+                $resultats = $query->fetchAll();
+
+                if (empty($resultats)) {
+                    echo "<tr><td colspan='5'>Aucune demande trouvée dans la base de données.</td></tr>";
+                }
+
+                foreach ($resultats as $row) {
                     echo "<tr>";
                     echo "<td>" . $row['id_demande'] . "</td>";
                     echo "<td>" . $row['nom'] . " " . $row['prenom'] . "</td>";

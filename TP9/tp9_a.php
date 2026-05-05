@@ -240,7 +240,7 @@ function formulaire_demande() {
 </head>
 <body>
     <div class="container">
-        <h1>🔐 Opération Tranquillité - Vacances</h1>
+        <h1>Opération Tranquillité - Vacances</h1>
         
         <div class="menu">
             <a href="tp9_a.php?formulaire=inscription" class="<?php echo ($formulaire_actif === 'inscription') ? 'active' : ''; ?>">

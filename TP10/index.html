@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Devis Cimenterie Lafarge</title>
+    <style>
+        /* --- Style global --- */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+
+        /* --- Style du formulaire --- */
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: 0 auto 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5c785b; /* Vert inspiré de ton image */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #465b45;
+        }
+
+        /* --- Style du devis (Inspiré de ton image) --- */
+        #devis-container {
+            display: none; /* Masqué par défaut, géré par le JS */
+            background: white;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            color: #333;
+        }
+        .devis-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #5c785b;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .devis-title {
+            color: #5c785b;
+            font-size: 40px;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        .info-tech {
+            background-color: #f0f5f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #f9fdf9;
+            color: #5c785b;
+        }
+        .totals {
+            width: 300px;
+            float: right;
+        }
+        .totals-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+        }
+        .totals-row.grand-total {
+            background-color: #5c785b;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2 style="color: #5c785b; text-align: center;">Calculateur Lafarge</h2>
+        <div class="form-group">
+            <label for="surface">Surface plancher de l'habitation (en m²) :</label>
+            <input type="number" id="surface" min="1" step="0.1" placeholder="Ex: 80" required>
+        </div>
+        <div class="form-group">
+            <label for="epaisseur">Épaisseur de la dalle (entre 15 et 35 cm) :</label>
+            <input type="number" id="epaisseur" min="15" max="35" placeholder="Ex: 20" required>
+        </div>
+        <button onclick="genererDevis()">Obtenir le devis</button>
+    </div>
+
+    <div id="devis-container">
+        <div class="devis-header">
+            <div>
+                <h1 class="devis-title">DEVIS</h1>
+                <p><strong>LAFARGE Cimenterie</strong><br>123 Route du Béton<br>26000 Valence</p>
+            </div>
+            <div style="text-align: right;">
+                <p>Date du devis : <span id="date-devis"></span></p>
+                <p>Validité du devis : 1 mois</p>
+            </div>
+        </div>
+
+        <div class="info-tech">
+            <h3 style="margin-top:0; color: #5c785b;">Détails de conception</h3>
+            <ul style="margin-bottom: 0;">
+                <li>Volume de béton théorique nécessaire : <strong id="vol-reel"></strong> m³</li>
+                <li>Quantité de ciment nécessaire : <strong id="qte-ciment"></strong> tonnes (dosé à 350kg/m³)</li>
+                <li>Nombre de camions pleins requis : <strong id="nb-camions"></strong></li>
+            </ul>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>DESCRIPTION</th>
+                    <th>PRIX UNITAIRE HT</th>
+                    <th>QUANTITÉ</th>
+                    <th>TOTAL HT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Béton (en m³)</td>
+                    <td>91.00 €</td>
+                    <td id="td-vol-facture"></td>
+                    <td id="td-prix-beton"></td>
+                </tr>
+                <tr>
+                    <td>Transport (Forfait camion 9m³)</td>
+                    <td>140.00 €</td>
+                    <td id="td-qte-camions"></td>
+                    <td id="td-prix-transport"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="totals clearfix">
+            <div class="totals-row">
+                <span>Sous total HT :</span>
+                <strong id="total-ht"></strong>
+            </div>
+            <div class="totals-row">
+                <span>TVA (20%) :</span>
+                <strong id="tva"></strong>
+            </div>
+            <div class="totals-row grand-total">
+                <span>TOTAL TTC :</span>
+                <strong id="total-ttc"></strong>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function genererDevis() {
+            // -- Étape 1 : Récupération des valeurs saisies --
+            let surfaceSaisie = document.getElementById('surface').value;
+            let epaisseurSaisie = document.getElementById('epaisseur').value;
+
+            // -- Étape 2 : Conversions de types --
+            let surface = parseFloat(surfaceSaisie);
+            let epaisseur = parseInt(epaisseurSaisie);
+
+            // -- Étape 3 : Contrôles de saisies --
+            if (isNaN(surface) || surface <= 0) {
+                alert("Veuillez saisir une surface valide (supérieure à 0).");
+                return; // Arrête la fonction si erreur
+            }
+            if (isNaN(epaisseur) || epaisseur < 15 || epaisseur > 35) {
+                alert("L'épaisseur saisie n'est pas correcte. Elle doit être comprise entre 15 et 35 cm.");
+                return;
+            }
+
+            // -- Étape 4 : Les Calculs --
+            // Conversion de l'épaisseur en mètres pour calculer le volume (m³)
+            let epaisseurMetre = epaisseur / 100;
+            let volumeReel = surface * epaisseurMetre;
+
+            // Calcul du ciment en tonnes (Volume * 350kg / 1000)
+            let tonnesCiment = (volumeReel * 350) / 1000;
+
+            // Calcul du nombre de camions. La fonction Math.ceil() arrondit à l'entier supérieur
+            let nombreCamions = Math.ceil(volumeReel / 9);
+
+            // Puisqu'on ne livre que des camions entiers, le volume facturé est le nb de camions * 9
+            let volumeFacture = nombreCamions * 9;
+
+            // Calcul des tarifs
+            let prixBetonHT = volumeFacture * 91;
+            let prixTransportHT = nombreCamions * 140;
+            
+            let totalHT = prixBetonHT + prixTransportHT;
+            let tva = totalHT * 0.20; // Hypothèse de TVA à 20%
+            let totalTTC = totalHT + tva;
+
+            // -- Étape 5 : Affichage dynamique dans la page HTML --
+            
+            // Date du jour automatique
+            let dateAujourdhui = new Date();
+            document.getElementById('date-devis').innerText = dateAujourdhui.toLocaleDateString('fr-FR');
+
+            // Injection des informations techniques
+            document.getElementById('vol-reel').innerText = volumeReel.toFixed(2);
+            document.getElementById('qte-ciment').innerText = tonnesCiment.toFixed(2);
+            document.getElementById('nb-camions').innerText = nombreCamions;
+
+            // Injection des données dans le tableau
+            document.getElementById('td-vol-facture').innerText = volumeFacture;
+            document.getElementById('td-prix-beton').innerText = prixBetonHT.toFixed(2) + " €";
+            
+            document.getElementById('td-qte-camions').innerText = nombreCamions;
+            document.getElementById('td-prix-transport').innerText = prixTransportHT.toFixed(2) + " €";
+
+            // Injection des totaux
+            document.getElementById('total-ht').innerText = totalHT.toFixed(2) + " €";
+            document.getElementById('tva').innerText = tva.toFixed(2) + " €";
+            document.getElementById('total-ttc').innerText = totalTTC.toFixed(2) + " €";
+
+            // -- Étape 6 : Faire apparaître le devis --
+            // Modifie la propriété CSS "display" de "none" à "block"
+            document.getElementById('devis-container').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
